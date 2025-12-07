@@ -6,28 +6,22 @@
 /*   By: fde-alme <fde-alme@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/07 16:33:10 by fde-alme          #+#    #+#             */
-/*   Updated: 2025/12/07 22:34:01 by fde-alme         ###   ########.fr       */
+/*   Updated: 2025/12/07 22:36:04 by fde-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int	main(void)
 {
-	ScavTrap a("Scrap");
-	ScavTrap b(a);
-	ScavTrap c;
-
+	FragTrap	a("Dusty");
+	FragTrap	b(a);
+	FragTrap	c;
+	
 	c = a;
-
-	a.attack("some random wanderer");
-	a.guardGate();
-
-	b.attack("some random wanderer");
-	b.guardGate();
-
-	c.attack("some random wanderer");
-	c.guardGate();
+	a.highFivesGuys();
+	b.highFivesGuys();
+	c.highFivesGuys();
 
 	return (0);
 }

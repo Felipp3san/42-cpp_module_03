@@ -6,7 +6,7 @@
 /*   By: fde-alme <fde-alme@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/07 20:37:30 by fde-alme          #+#    #+#             */
-/*   Updated: 2025/12/07 21:07:36 by fde-alme         ###   ########.fr       */
+/*   Updated: 2025/12/07 22:33:08 by fde-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : ClapTrap
+class ScavTrap : public ClapTrap
 {
 public:
 	ScavTrap(void);

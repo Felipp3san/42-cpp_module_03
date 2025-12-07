@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fde-alme <fde-alme@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/07 16:33:10 by fde-alme          #+#    #+#             */
-/*   Updated: 2025/12/07 22:34:01 by fde-alme         ###   ########.fr       */
+/*   Created: 2025/12/07 22:16:37 by fde-alme          #+#    #+#             */
+/*   Updated: 2025/12/07 22:27:23 by fde-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-int	main(void)
+#include "ClapTrap.hpp"
+
+class FragTrap : public ClapTrap
 {
-	ScavTrap a("Scrap");
-	ScavTrap b(a);
-	ScavTrap c;
+public:
+	FragTrap(void);
+	FragTrap(const std::string &name);
+	FragTrap(const FragTrap &other);
+	~FragTrap(void);
+	FragTrap	&operator=(const FragTrap &other);
+public:
+	void		highFivesGuys(void);
+};
 
-	c = a;
-
-	a.attack("some random wanderer");
-	a.guardGate();
-
-	b.attack("some random wanderer");
-	b.guardGate();
-
-	c.attack("some random wanderer");
-	c.guardGate();
-
-	return (0);
-}
+#endif

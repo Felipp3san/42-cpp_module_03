@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fde-alme <fde-alme@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/07 16:33:10 by fde-alme          #+#    #+#             */
-/*   Updated: 2025/12/07 22:34:01 by fde-alme         ###   ########.fr       */
+/*   Created: 2025/12/07 20:37:30 by fde-alme          #+#    #+#             */
+/*   Updated: 2025/12/07 21:07:36 by fde-alme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-int	main(void)
+#include "ClapTrap.hpp"
+
+class ScavTrap : ClapTrap
 {
-	ScavTrap a("Scrap");
-	ScavTrap b(a);
-	ScavTrap c;
+public:
+	ScavTrap(void);
+	ScavTrap(const std::string &name);
+	ScavTrap(const ScavTrap &other);
+	~ScavTrap(void);
+	ScavTrap	&operator=(const ScavTrap &other);
+public:
+	void		attack(const std::string& target);
+	void		guardGate();
+};
 
-	c = a;
-
-	a.attack("some random wanderer");
-	a.guardGate();
-
-	b.attack("some random wanderer");
-	b.guardGate();
-
-	c.attack("some random wanderer");
-	c.guardGate();
-
-	return (0);
-}
+#endif
