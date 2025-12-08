@@ -19,10 +19,10 @@ class FragTrap : virtual public ClapTrap
 {
 public:
 	FragTrap(void);
-	FragTrap(const std::string &name);
-	FragTrap(const FragTrap &other);
+	FragTrap(std::string const &name);
+	FragTrap(FragTrap const &other);
 	~FragTrap(void);
-	FragTrap	&operator=(const FragTrap &other);
+	FragTrap	&operator=(FragTrap const &other);
 public:
 	void		highFivesGuys(void);
 };

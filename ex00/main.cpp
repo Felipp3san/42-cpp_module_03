@@ -14,24 +14,36 @@
 
 int	main(void)
 {
-	ClapTrap	a("Rusty");
+	ClapTrap	a;
+	ClapTrap	b("Rusty");
+	ClapTrap	c(a);
+	ClapTrap	d;
 
-	// Alive
+	d = a;
+
 	a.attack("some random wanderer");
+	b.attack("some random wanderer");
+	c.attack("some random wanderer");
+	d.attack("some random wanderer");
+
+	a.takeDamage(20);
+	b.takeDamage(50);
+	c.takeDamage(30);
+	d.takeDamage(5);
+
 	a.beRepaired(10);
-	a.attack("some random wanderer");
-	a.beRepaired(10);
-	a.attack("some random wanderer");
-	a.beRepaired(10);
-	a.attack("some random wanderer");
-	a.beRepaired(10);
-	a.attack("some random wanderer");
-	a.beRepaired(10);
-	a.attack("some random wanderer");
+	b.beRepaired(20);
+	c.beRepaired(30);
+	d.beRepaired(40);
+
+	for (int i = 0; i < 10; i++)
+	{
+		a.attack("for depleting energy"); // Has no hitpoints left.
+		d.attack("for depleting energy"); // Has hitpoints.
+	}
 
 	// Dead
-	a.takeDamage(100);
-	a.attack("some random wanderer");
+	a.takeDamage(10);
 	a.beRepaired(10);
 
 	return (0);

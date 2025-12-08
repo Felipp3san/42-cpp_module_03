@@ -65,7 +65,7 @@ ScavTrap	&ScavTrap::operator=(ScavTrap const &other)
 	return (*this);
 }
 
-void	ScavTrap::attack(const std::string& target)
+void	ScavTrap::attack(std::string const &target)
 {
 	if (_hitPoints == 0)
 	{
