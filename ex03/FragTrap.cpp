@@ -14,44 +14,61 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
-FragTrap::FragTrap()
-	: ClapTrap()
+FragTrap::FragTrap() :
+	ClapTrap()
 {
 	_hitPoints = 100;
 	_energyPoints = 100;
 	_attackDamage = 30;
-	std::cout << "FragTrap default constructor called." << std::endl;
+
+	std::cout
+		<< "FragTrap default constructor called."
+		<< std::endl;
 }
 
-FragTrap::FragTrap(std::string const &name)
-	: ClapTrap(name)
+FragTrap::FragTrap(std::string const &name) :
+	ClapTrap(name)
 {
 	_hitPoints = 100;
 	_energyPoints = 100;
 	_attackDamage = 30;
-	std::cout << "FragTrap parameterized constructor called." << std::endl;
+
+	std::cout
+		<< "FragTrap parameterized constructor called."
+		<< std::endl;
 }
 
-FragTrap::FragTrap(FragTrap const &other)
-	: ClapTrap(other)
+FragTrap::FragTrap(FragTrap const &other) :
+	ClapTrap(other)
 {
-	std::cout << "FragTrap copy constructor called." << std::endl;
+	std::cout
+		<< "FragTrap copy constructor called."
+		<< std::endl;
 }
 
 FragTrap::~FragTrap(void)
 {
-	std::cout << "FragTrap destructor called." << std::endl;
+	std::cout
+		<< "FragTrap destructor called."
+		<< std::endl;
 }
 
 FragTrap	&FragTrap::operator=(FragTrap const &other)
 {
 	if (this != &other)
 		ClapTrap::operator=(other);
-	std::cout << "FragTrap copy assignment operator called." << std::endl;
+
+	std::cout
+		<< "FragTrap copy assignment operator called."
+		<< std::endl;
+
 	return (*this);
 }
 
 void	FragTrap::highFivesGuys(void)
 {
-	std::cout << "FragTrap " << _name << " requests a high five!" << std::endl;
+	std::cout
+		<< "FragTrap " << _name
+		<< " requests a high five!"
+		<< std::endl;
 }
