@@ -6,12 +6,12 @@ NAME := scavtrap
 BUILD_DIR := build
 
 SRCS := $(wildcard *.cpp)
-OBJS := $(patsubst ./%.cpp, $(BUILD_DIR)/%.cpp, $(SRCS))
+OBJS := $(patsubst ./%.cpp, $(BUILD_DIR)/%.o, $(SRCS))
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $@
+	$(CC) $(CFLAGS) $^ -o $@
 
 $(BUILD_DIR)/%.o: %.cpp
 	@mkdir -p $(BUILD_DIR)
@@ -22,7 +22,6 @@ clean:
 
 fclean: clean
 	@rm -f $(NAME)
-
 
 re: fclean all
 
